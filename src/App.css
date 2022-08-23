@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.book{
+  border: 1px solid black;
+}
+
+
+.cont{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.cardd{
+  width: 250px;
+  margin: 10px;
+  border: 1px solid hsl(0, 0%, 50%, 0.3);
+  padding: 40px 10px;
+  box-shadow: 9px 6px 24px -13px #00000033;
+  
+  /* box-shadow: ; */
+}
+
+.dropdown-btn{
+  background-color: green;
+  border-radius: 100%;
+
+}
