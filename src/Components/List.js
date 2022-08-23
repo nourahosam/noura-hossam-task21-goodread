@@ -11,7 +11,7 @@ const List = (props) => {
                 {props.data.map((el) => {
                     
                     console.log({...el});
-                    <Book {...el} handleClick={props.handleClick} />
+                    return(<Book {...el} handleClick={props.handleClick} />)
                 })}
                 
             </Row>

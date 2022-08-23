@@ -112,7 +112,8 @@ const Main = () => {
         <div className='cont'>
 
             <List data={currentlyReading} handleClick={handleClick} title="Currently Reading" />
-
+            <List data={wantToRead} handleClick={handleClick} title="Want to Read" />
+            <List data={read} handleClick={handleClick} title="Read" />
             <Button variant="primary" className='fixed' onClick={() => { setRender(true) }}>Search</Button>
         </div>
     </div>)
