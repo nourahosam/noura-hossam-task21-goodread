@@ -11,18 +11,6 @@ const Main = () => {
     const [wantToRead, setWantToRead] = useState([]);
     const [renderSearch, setRender] = useState(false);
 
-    // useEffect(()=>{
-    //     localStorage.setItem('currentlyReading', JSON.stringify(currentlyReading) || []);
-    // }, [currentlyReading])
-
-    // useEffect(()=>{
-    //     localStorage.setItem('read', JSON.stringify(read) || []);
-    // }, [read])
-
-    // useEffect(()=>{
-    //     localStorage.setItem('wantToRead', JSON.stringify(wantToRead) || []);
-    // }, [wantToRead])
-
     useEffect(() => {
         const currtmp = JSON.parse(localStorage.getItem('currentlyReading')) || [];
         setCurrentlyReading(currtmp);
@@ -104,19 +92,22 @@ const Main = () => {
 
     }
 
-    return (<div>
-        {console.log("RENDERERKLNSFN.EFKMFL/KSMV/LKSM")}
-        {console.log(currentlyReading)}
-        {console.log("RENDERERKLNSFN.EFKMFL/KSMV/LKSM")}
+    return (<>
+<div className='header'>
+<h1>MyReads</h1>
+</div>
         {renderSearch && <Search handleClick={handleClick} setRender={setRender} />}
-        <div className='cont'>
-
+        <div className='search-btn'>
+                <Button variant="primary" className='' onClick={() => { setRender(true) }}>+</Button>
+            </div>
+        <div className='main-list'>
+            
             <List data={currentlyReading} handleClick={handleClick} title="Currently Reading" />
             <List data={wantToRead} handleClick={handleClick} title="Want to Read" />
             <List data={read} handleClick={handleClick} title="Read" />
-            <Button variant="primary" className='fixed' onClick={() => { setRender(true) }}>Search</Button>
+
         </div>
-    </div>)
+    </>)
 
 }
 

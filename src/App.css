@@ -1,48 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.book{
-  border: 1px solid black;
-}
-
-
-.cont{
+.main-container{
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -51,18 +7,108 @@
   
 }
 
-.cardd{
-  width: 250px;
+.book-card{
+  width: 140px;
   margin: 10px;
-  border: 1px solid hsl(0, 0%, 50%, 0.3);
-  padding: 40px 10px;
-  box-shadow: 9px 6px 24px -13px #00000033;
+  text-overflow: clip;
+  /* box-shadow: 9px 6px 24px -13px #00000033; */
   
   /* box-shadow: ; */
 }
+.book{
+  width: 140px;
+  height: 180px;
+  /* overflow: hidden; */
+  position: relative;
+}
 
-.dropdown-btn{
+.book-img img{
+
+  width: 140px;
+
+
+}
+
+.book-details p{
+  position: relative;
+  height: 30px;
+  margin: 10px 0 0 0;
+  width: 130px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 12px;
+  color: grey;
+}
+.book-details p:first-child{
+  font-weight: bold;
+  color: black;
+}
+
+.book-img{
+  position: absolute;
+  width: 140px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.dropdown{
+  z-index: 2;
+
+}
+.dropdown button{
+  margin-top: 155px;
+  margin-left: 110px;
   background-color: green;
-  border-radius: 100%;
+  width: 40px;
+  border-radius: 100px !important;
+}
+.search{
+  position: absolute;
+  background-color: white;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
 
+.search-btn{
+
+  z-index: 4;
+  position: fixed;
+  width: 70px;
+  bottom: 20px;
+  right:20px; 
+  border-radius: 1000px;
+  /* background-color: green; */
+}
+
+.header{
+  text-align: center;
+  width: 100%;
+  background-color: green;
+  height: 55px;
+  color: whitesmoke;
+}
+
+.search-btn button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background-color: green;
+  font-size: 25px;
+  border-radius: 1000px;
+}
+
+.App{
+  position: relative;
+}
+
+span h2{
+  font-weight: bolder;
+  margin: 0px 0 0 5px;
+}
+span hr{
+  margin: 8px;
 }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { Form, CloseButton } from 'react-bootstrap';
+import { Form, CloseButton, InputGroup, Button } from 'react-bootstrap';
 import Book from './Book';
 import DataContext from './Main';
 
@@ -34,10 +34,15 @@ const Search = (props) => {
     
     return (
         <div className='search'>
-            <CloseButton onClick={()=>{props.setRender(false)}}/>
-            <Form.Label>Search</Form.Label>
+            <InputGroup>
+            <Button  variant="outline-secondary" id="button-addon1" onClick={()=>{props.setRender(false)}}>
+                <CloseButton />
+            </Button>
+            <Form.Label></Form.Label>
             <Form.Control type="text" placeholder="Search" onChange={onChange} />
-            <div className='cont'>
+            </InputGroup>
+
+            <div className='main-container'>
             {byBook.map((el)=>{
 
                 return(<Book {...el.volumeInfo} handleClick={props.handleClick} />)

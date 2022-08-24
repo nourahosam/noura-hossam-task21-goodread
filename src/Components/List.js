@@ -1,20 +1,20 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
 import Book from './Book';
 const List = (props) => {
     return (
         <div>
-            <h1>{props.title}</h1>
-            {console.log("LISTTTTTTTTTTTTTTTTTTTTTTTTTTT")}
-            {console.log(props)}
-            <Row>
+            <span><h2>{props.title}</h2>
+            <hr></hr>
+            </span>
+            
+            <div className='main-container'>
+                {console.log("LISTTTTTTTTTTTTTTTTTTTTTTTTTTT")}
+                {console.log(props)}
                 {props.data.map((el) => {
-                    
-                    console.log({...el});
-                    return(<Book {...el} handleClick={props.handleClick} />)
+                    console.log({ ...el });
+                    return (<Book {...el} handleClick={props.handleClick} />)
                 })}
-                
-            </Row>
+            </div>
         </div>
     )
 }
