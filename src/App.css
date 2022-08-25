@@ -29,9 +29,18 @@
 
 }
 
+.book-details{
+  text-overflow: ellipsis;
+}
+
 .book-details p{
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  overflow: hidden;
   position: relative;
-  height: 30px;
+  padding: 0;
+  /* width: 140px; */
+  height: 40px;
   margin: 10px 0 0 0;
   width: 130px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -39,6 +48,12 @@
   color: grey;
 }
 .book-details p:first-child{
+  /* width: 140px; */
+  /* white-space: nowrap; */
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  
   font-weight: bold;
   color: black;
 }

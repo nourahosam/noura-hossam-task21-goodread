@@ -1,40 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import List from './List';
 import BookDetails from './BookDetails';
 import { Link, Route, Routes } from 'react-router-dom'
+import { DataContext } from './DataContext';
 
 const Book = (props) => {
-
+    const { handleClick } = useContext(DataContext);
     return (
-        <div className='book-card'>
-
-
-            <div className='book'>
-                <div className='book-img'>
-                    <img src={`${props.imageLinks.thumbnail}`} />
+        // 
+            <div className='book-card'>
+                {/* <Link to="/details"> */}
+                <div className='book'>
+                    <div className='book-img'>
+                        {props.readingModes.image && <img src={props.imageLinks.thumbnail ? `${props.imageLinks.thumbnail}` : ''} />}
+                    </div>
+                    <div className='dropdown'>
+                        <DropdownButton id="dropdown-basic-button" variant='success ' className='drop-text' >
+                            <Dropdown.Item onClick={() => { handleClick(props, "Currently Reading") }}>Currently Reading</Dropdown.Item>
+                            <Dropdown.Item onClick={(e) => { handleClick(props, "Want to Read") }}>Want to Read</Dropdown.Item>
+                            <Dropdown.Item onClick={() => { handleClick(props, "Read") }}>Read</Dropdown.Item>
+                            <Dropdown.Item onClick={() => { handleClick(props, "None") }}>None</Dropdown.Item>
+                        </DropdownButton>
+                    </div>
                 </div>
-                <div className='dropdown'>
-                    <DropdownButton id="dropdown-basic-button" variant='success ' className='drop-text' >
-                        <Dropdown.Item onClick={() => { props.handleClick(props, "currentlyReading") }}>Currently Reading</Dropdown.Item>
-                        <Dropdown.Item onClick={(e) => { props.handleClick(props, "wantToRead") }}>Want to Read</Dropdown.Item>
-                        <Dropdown.Item onClick={() => { props.handleClick(props, "read") }}>Read</Dropdown.Item>
-                        <Dropdown.Item onClick={() => { props.handleClick(props, "none") }}>None</Dropdown.Item>
-                    </DropdownButton>
+                <div className='book-details'>
+                    <p>{props.title ? props.title : "No Title Found"}</p>
+                    <p>{props.authors ? props.authors : "No Author Found"}</p>
                 </div>
+
+                {/* </Link> */}
             </div>
-
-
-            <div className='book-details'>
-                <p>{props.title}</p>
-                <p>{props.authors}</p>
-
-            </div>
-
-            {/* <Routes>
-            <Route exact path='/details' element={< BookDetails data={props}/>}></Route>
-            </Routes> */}
-        </div>)
+        // </Link>
+        )
 }
 
 export default Book;
