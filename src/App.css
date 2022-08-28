@@ -127,3 +127,8 @@ span h2{
 span hr{
   margin: 8px;
 }
+
+.book-details-container {
+  display: flex;
+  flex-direction: row;
+}

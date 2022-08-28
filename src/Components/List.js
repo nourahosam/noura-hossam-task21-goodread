@@ -14,7 +14,7 @@ const List = (props) => {
 
                 {books.map((el) => {
                     if (el.status === props.title) {
-                        console.log({ ...el });
+                        console.log("LIST" , { ...el });
                         return (<Book {...el} />)
                     }
                 })}

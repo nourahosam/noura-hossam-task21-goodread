@@ -8,13 +8,16 @@ import { DataContext } from './DataContext';
 const Book = (props) => {
     const { handleClick } = useContext(DataContext);
     return (
-        // 
             <div className='book-card'>
-                {/* <Link to="/details"> */}
+                {console.log("book", props)}
+                
+                {console.log(props)}
                 <div className='book'>
+                <Link to={{pathname:"/details/"+props.id}}>
                     <div className='book-img'>
                         {props.readingModes.image && <img src={props.imageLinks.thumbnail ? `${props.imageLinks.thumbnail}` : ''} />}
                     </div>
+                    </Link>
                     <div className='dropdown'>
                         <DropdownButton id="dropdown-basic-button" variant='success ' className='drop-text' >
                             <Dropdown.Item onClick={() => { handleClick(props, "Currently Reading") }}>Currently Reading</Dropdown.Item>
@@ -24,12 +27,13 @@ const Book = (props) => {
                         </DropdownButton>
                     </div>
                 </div>
+                <Link to={{pathname:"/details/"+props.id}}>
                 <div className='book-details'>
                     <p>{props.title ? props.title : "No Title Found"}</p>
                     <p>{props.authors ? props.authors : "No Author Found"}</p>
                 </div>
-
-                {/* </Link> */}
+                </Link>
+                
             </div>
         // </Link>
         )

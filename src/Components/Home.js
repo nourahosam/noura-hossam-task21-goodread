@@ -8,10 +8,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const Home = () => {
     const { books, setBooks, handleClick } = useContext(DataContext);
-
-    // const [currentlyReading, setCurrentlyReading] = useState([]);
-    // const [read, setRead] = useState([]);
-    // const [wantToRead, setWantToRead] = useState([]);
     const [renderSearch, setRender] = useState(false);
 
 

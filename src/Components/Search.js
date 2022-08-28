@@ -60,7 +60,7 @@ const Search = (props) => {
                     console.log(exists)
                     if (!exists) { 
                         console.log(books);  
-                        return (<Book {...el.volumeInfo} />)
+                        return (<Book {...el.volumeInfo} id={el.id} />)
                     }
                 })}
                 {/* {byAuthor.map((el) => {
